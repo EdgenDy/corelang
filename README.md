@@ -1,2 +1,2 @@
-# corelang
-New Programming Language based on TypeScript
+# Corelang
+New multipurpose Programming Language based on TypeScript.

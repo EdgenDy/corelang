@@ -1,0 +1,43 @@
+import core::lang::System;
+
+namespace core::lang {
+  export const name: uint8[] = "Sample Core Code";
+
+  export createPoint(x: int32, y: int32): Point {
+    return new Point(x, y);
+  };
+
+  type char: int8;
+
+  export class Point {
+    protected x: int32;
+    protected y: int32;
+
+    public Point(x, y) {}
+
+    public x {
+      set(value) {
+        x = value;
+      }
+
+      get() {
+        return x;
+      }
+    }
+
+    static create(): Point {
+      return new Point(0, 0);
+    }
+  };
+
+  export class Triangle extends Point {
+    private z: int32;
+
+    public Triangle(x, y, z) {}
+  }
+}
+
+export main(): int32 {
+  System::out::print("Hello World!");
+  return 0;
+}
