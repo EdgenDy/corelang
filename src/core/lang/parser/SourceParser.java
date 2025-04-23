@@ -8,4 +8,8 @@ public class SourceParser {
   public SourceParser(InputStream isstream) {
     this.scanner = new SourceScanner(isstream);
   }
+
+  public void parse() {
+    
+  }
 }
