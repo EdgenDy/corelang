@@ -1,17 +1,18 @@
 package core.lang.parser;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.Reader;
 
-public class CodeScanner {
-  private Reader stream;
+public class SourceScanner {
+  private InputStream stream;
   private int byteCurrent;
   private int byteNext;
   private int byteNextNext;
   
   private StringBuilder literals;
 
-  public CodeScanner(Reader stream) {
+  public SourceScanner(InputStream stream) {
     this.stream = stream;
     this.byteCurrent = readByte();
     this.byteNext = readByte();
@@ -157,7 +158,7 @@ public class CodeScanner {
       case 3:
         return literal.equals("for") || literal.equals("get") || literal.equals("new") || literal.equals("set") || literal.equals("var");
       case 4:
-        return literal.equals("case") || literal.equals("type");
+        return literal.equals("case") || literal.equals("enum") || literal.equals("type");
       case 5:
         return literal.equals("break") || literal.equals("class") || literal.equals("const") || literal.equals("while");
       case 6:

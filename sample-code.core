@@ -34,7 +34,18 @@ namespace core::lang {
     private z: int32;
 
     public Triangle(x, y, z) {}
-  }
+  };
+
+  type Triangle: class Point {
+    private z: int32;
+
+    public Triangle() {}
+  };
+
+  type Value: enum {
+    IDENTIFIER,
+    KEYWORD
+  };
 }
 
 export main(): int32 {
